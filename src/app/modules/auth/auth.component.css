@@ -1,0 +1,110 @@
+nav {
+    position: fixed;
+    top: 20px;
+    right: 50px;
+}
+
+nav span {
+    margin-right: 10px;
+}
+
+mat-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+div.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+div.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: -100px;
+    margin-bottom: 20px;
+}
+
+div.header img {
+    width: 95px;
+    height: 95px;
+}
+
+div.form {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    border-radius: .4rem;
+    padding: 20px 30px;
+    margin-top: 30px;
+    min-width: 300px;
+}
+
+div.form span {
+    font-size: .8rem;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+mat-form-field {
+    max-width: 250px;
+    margin-right: 10px;
+}
+
+mat-form-field input {
+    direction: ltr;
+    text-align: left;
+}
+
+mat-checkbox {
+    max-width: 200px;
+}
+
+mat-checkbox span {
+    cursor: default;
+}
+
+mat-checkbox span span {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+re-captcha {
+    position: relative;
+    left: 40px;
+    margin-top: 10px;
+    transform: scale(0.77);
+    -webkit-transform: scale(0.77);
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+}
+
+div.buttons {
+    position: relative;
+    margin-top: 20px;
+    height: 30px;
+}
+
+div.buttons button {
+    position: absolute;
+    left: -10px;
+}
+
+span.link {
+    margin-top: 20px;
+    font-size: .9rem;
+    cursor: pointer;
+}
+
+span.link:hover {
+    text-decoration: underline;
+}
