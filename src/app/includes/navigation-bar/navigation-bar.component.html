@@ -1,0 +1,87 @@
+<mat-toolbar>
+  <span>{{app_name}}</span>
+  <div class="spacer"></div>
+  <div class="search-input">
+    <input type="text" placeholder="جستجو محصول" onblur="this.parentElement.classList.remove('focus')"
+      onfocus="this.parentElement.classList.add('focus')">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+      <path
+        d="M31 28h-1.59l-.55-.55C30.82 25.18 32 22.23 32 19c0-7.18-5.82-13-13-13S6 11.82 6 19s5.82 13 13 13c3.23 0 6.18-1.18 8.45-3.13l.55.55V31l10 9.98L40.98 38 31 28zm-12 0c-4.97 0-9-4.03-9-9s4.03-9 9-9 9 4.03 9 9-4.03 9-9 9z" />
+    </svg>
+  </div>
+  <div class="spacer"></div>
+
+  <button mat-icon-button color="primary" class="account" [matMenuTriggerFor]="appMenu" matTooltip="حساب کاربری"
+    *ngIf="account.loggined == false">
+    <mat-icon>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+        <path
+          d="M24 24c4.42 0 8-3.59 8-8 0-4.42-3.58-8-8-8s-8 3.58-8 8c0 4.41 3.58 8 8 8zm0 4c-5.33 0-16 2.67-16 8v4h32v-4c0-5.33-10.67-8-16-8z" />
+      </svg>
+    </mat-icon>
+  </button>
+
+  <button mat-button color="primary" class="cart account" [matMenuTriggerFor]="appMenu" (menuOpened)="changeAccountMenuIsOpen(true)" (menuClosed)="changeAccountMenuIsOpen(false)" *ngIf="account.loggined == true">
+    <span style="color: #000;">{{account.email && account.email.split("@")[0]}}</span>
+    <svg class="primary" [ngClass]="{'open': accountMenuIsOpen}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+      <path d="M33.17 17.17L24 26.34l-9.17-9.17L12 20l12 12 12-12z" /></svg>
+  </button>
+
+  <button mat-stroked-button color="primary" class="cart" matBadge="0" matBadgePosition="below after" matBadgeColor="accent">
+    <svg class="primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+      <path
+        d="M14 36c-2.21 0-3.98 1.79-3.98 4s1.77 4 3.98 4 4-1.79 4-4-1.79-4-4-4zM2 4v4h4l7.19 15.17-2.7 4.9c-.31.58-.49 1.23-.49 1.93 0 2.21 1.79 4 4 4h24v-4H14.85c-.28 0-.5-.22-.5-.5 0-.09.02-.17.06-.24L16.2 26h14.9c1.5 0 2.81-.83 3.5-2.06l7.15-12.98c.16-.28.25-.61.25-.96 0-1.11-.9-2-2-2H10.43l-1.9-4H2zm32 32c-2.21 0-3.98 1.79-3.98 4s1.77 4 3.98 4 4-1.79 4-4-1.79-4-4-4z" />
+    </svg>
+    <span>سبد خرید</span>
+  </button>
+
+  <mat-menu #appMenu="matMenu" xPosition="before">
+    <div *ngIf="account.loggined == false" class="menu-container">
+      <button mat-raised-button color="primary" routerLink="/account/login">ورود به حساب</button>
+      <span routerLink="/account/register">کاربر جدید هستم</span>
+    </div>
+    <div *ngIf="account.loggined == true">
+      <button mat-menu-item>
+        <mat-icon>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+            <path
+              d="M24 11.8c2.32 0 4.2 1.88 4.2 4.2s-1.88 4.2-4.2 4.2-4.2-1.88-4.2-4.2 1.88-4.2 4.2-4.2m0 18c5.95 0 12.2 2.91 12.2 4.2v2.2H11.8V34c0-1.29 6.25-4.2 12.2-4.2M24 8c-4.42 0-8 3.58-8 8 0 4.41 3.58 8 8 8s8-3.59 8-8c0-4.42-3.58-8-8-8zm0 18c-5.33 0-16 2.67-16 8v6h32v-6c0-5.33-10.67-8-16-8z" />
+            </svg>
+        </mat-icon>
+        <span>پروفایل</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="account.forget()">
+        <mat-icon>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+            <path
+              d="M20.17 31.17L23 34l10-10-10-10-2.83 2.83L25.34 22H6v4h19.34l-5.17 5.17zM38 6H10c-2.21 0-4 1.79-4 4v8h4v-8h28v28H10v-8H6v8c0 2.21 1.79 4 4 4h28c2.21 0 4-1.79 4-4V10c0-2.21-1.79-4-4-4z" />
+          </svg>
+        </mat-icon>
+        <span>خروج از حساب</span>
+      </button>
+    </div>
+  </mat-menu>
+</mat-toolbar>
+<mat-toolbar class="primary">
+  <mat-menu #itemMenu="matMenu" style="max-width: 400px">
+    <div class="menu-item">
+      <ng-template matMenuContent let-menu="menu" let-photo="photo">
+        <div class="items">
+          <div *ngFor="let list of menu" class="item">
+            <span class="title">{{list.category}}</span>
+            <span *ngFor="let item of list['items']" class="item">&nbsp; {{item.name}}</span>
+          </div>
+          <div class="item photo" *ngIf="photo">
+            <img [src]="photo" alt="تصویر دسته بندی">
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </mat-menu>
+
+  <div *ngFor="let item of menu">
+    <button mat-button [matMenuTriggerFor]="itemMenu"
+      [matMenuTriggerData]="{menu: item['menu'], photo: item['photo']}">{{item.category}}</button>
+  </div>
+</mat-toolbar>

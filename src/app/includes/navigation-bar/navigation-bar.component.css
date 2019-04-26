@@ -1,0 +1,168 @@
+mat-toolbar:first-child {
+    background-color: #fff;
+    padding: 0 5vw;
+}
+
+mat-toolbar:last-child {
+    height: 40px;
+    background-color: var(--primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    padding: 0 7vw;
+    display: flex;
+    align-items: center;
+}
+
+mat-toolbar:last-child button {
+    color: #fff;
+}
+
+div.spacer {
+    flex: 1 1 auto;
+}
+
+div.search-input {
+    background-color: rgba(0, 0, 0, .06);
+    padding: 0 10px;
+    height: 38px;
+    min-width: 400px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: .3rem;
+    transition: all .3s;
+}
+
+div.search-input.focus {
+    background-color: #fff;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+    transition: all .3s;
+}
+
+div.search-input input {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+}
+
+div.search-input input::placeholder {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+div.search-input svg {
+    width: 24px;
+    height: 24px;
+    fill: rgba(0, 0, 0, 0.6);
+}
+
+div.menu-container {
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
+}
+
+div.menu-container button {
+    width: 100%;
+}
+
+div.menu-container span {
+    margin-top: 13px;
+    font-size: .8rem;
+    cursor: pointer;
+}
+
+div.menu-container span:hover {
+    text-decoration: underline;
+}
+
+button.account {
+    margin-left: 10px;
+}
+
+button.cart {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+button.cart svg {
+    width: 18px;
+    height: 18px;
+}
+
+button.cart span {
+    margin-right: 5px;
+}
+
+button.cart.account span {
+    margin-left: 5px;
+}
+
+button.cart.account svg:not(.open){
+    transform: rotate(90deg);
+    transition: all .3s;
+}
+
+button.cart.account svg.open{
+    transform: rotate(0deg);
+    transition: all .3s;
+}
+
+div.menu-item{
+    min-width: 450px;
+    padding: 10px 20px;
+}
+
+div.items{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+div.items div.item{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+div.items div.item.photo{
+    justify-content: center;
+    align-items: center;
+}
+
+div.items div.item.photo img{
+    width: 150px;
+    height: 150px;
+}
+
+div.items div.item span{
+    cursor: pointer;
+}
+
+div.items div.item span.title{
+    color: var(--primary);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    transition: all .3s;
+}
+
+div.items div.item span.title:hover{
+    transition: all .3s;
+}
+
+div.items div.item span.item{
+    font-size: .9rem;
+    color: rgba(0, 0, 0, .6);
+    margin-bottom: 5px;
+    transition: all .3s;
+}
+
+
+div.items div.item span.item:hover{
+    color: #000;
+    transition: all .3s;
+}

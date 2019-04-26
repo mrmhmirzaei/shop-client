@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root{
+    --primary: #3f51b5;
+    --accent: #f06292;
+}
+
 *{
     outline: none;
     user-select: none;
@@ -8,8 +14,13 @@
 body {
     margin: 0;
     background-color: #f8f8f8;
+    overflow-x: hidden;
 }
 
-.primary{
-    fill: #3f51b5;
+svg.primary{
+    fill: var(--primary);
+}
+
+.mat-menu-panel{
+    max-width: 100% !important;
 }
