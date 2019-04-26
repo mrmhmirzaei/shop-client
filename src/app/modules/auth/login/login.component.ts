@@ -36,7 +36,7 @@ export class LoginComponent {
         this.snakbar.open(res['message'], 'باشه', { duration: 3000 });
         this.loading = false;
         if (res['status'] == true) {
-          this.account.set(res['auth']);
+          this.account.set(this.email, res['auth']);
           this.router.navigate(['/']);
         }
       } catch (error) {
