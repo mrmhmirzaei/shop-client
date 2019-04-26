@@ -49,6 +49,12 @@ div.form {
     min-width: 300px;
 }
 
+div.form.center-content{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
 div.form span {
     font-size: .8rem;
     margin-top: -10px;
@@ -94,6 +100,12 @@ div.buttons {
     height: 30px;
 }
 
+div.buttons span {
+    position: relative;
+    top: 5px;
+    cursor: pointer;
+}
+
 div.buttons button {
     position: absolute;
     left: -10px;
@@ -105,6 +117,6 @@ span.link {
     cursor: pointer;
 }
 
-span.link:hover {
+span.link:hover, div.buttons span:hover {
     text-decoration: underline;
 }
