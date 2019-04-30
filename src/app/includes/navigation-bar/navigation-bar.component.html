@@ -1,8 +1,8 @@
 <mat-toolbar>
-  <span>{{app_name}}</span>
+  <span routerLink="/">{{app_name}}</span>
   <div class="spacer"></div>
   <div class="search-input">
-    <input type="text" placeholder="جستجو محصول" onblur="this.parentElement.classList.remove('focus')"
+    <input type="text" name="search" placeholder="جستجو محصول" onblur="this.parentElement.classList.remove('focus')"
       onfocus="this.parentElement.classList.add('focus')">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
       <path
@@ -22,7 +22,9 @@
   </button>
 
   <button mat-button color="primary" class="cart account" [matMenuTriggerFor]="appMenu" (menuOpened)="changeAccountMenuIsOpen(true)" (menuClosed)="changeAccountMenuIsOpen(false)" *ngIf="account.loggined == true">
-    <span style="color: #000;">{{account.email && account.email.split("@")[0]}}</span>
+    <span style="color: #000;" *ngIf="account.name.first || account.name.last">{{account.name.first}} {{account.name.last}}</span>
+    <span style="color: #000;" *ngIf="account.email && !account.name.first && !account.name.last">{{account.email.split("@")[0]}}</span>
+    <span style="color: #000;" *ngIf="!account.email && !account.name.first && !account.name.last">حساب کاربری</span>
     <svg class="primary" [ngClass]="{'open': accountMenuIsOpen}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
       <path d="M33.17 17.17L24 26.34l-9.17-9.17L12 20l12 12 12-12z" /></svg>
   </button>
@@ -41,7 +43,7 @@
       <span routerLink="/account/register">کاربر جدید هستم</span>
     </div>
     <div *ngIf="account.loggined == true">
-      <button mat-menu-item>
+      <button mat-menu-item routerLink="/me/profile">
         <mat-icon>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
             <path

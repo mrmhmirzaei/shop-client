@@ -1,0 +1,22 @@
+mat-progress-bar {
+    position: relative;
+    top: -24px;
+    right: -24px;
+    width: calc(100% + 48px);
+}
+
+div.header{
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+div.header p{
+    font-size: .8rem;
+    margin-top: -10px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}

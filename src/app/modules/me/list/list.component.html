@@ -1,0 +1,38 @@
+<mat-list role="list">
+  <mat-list-item matRipple [ngClass]="{'active': path == '/me/profile'}" routerLink="/me/profile">
+    <mat-icon>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+        <path
+          d="M24 24c4.42 0 8-3.59 8-8 0-4.42-3.58-8-8-8s-8 3.58-8 8c0 4.41 3.58 8 8 8zm0 4c-5.33 0-16 2.67-16 8v4h32v-4c0-5.33-10.67-8-16-8z" />
+      </svg>
+    </mat-icon>
+    <span>پروفایل</span>
+  </mat-list-item>
+  <mat-list-item matRipple [ngClass]="{'active': path == '/me/locations'}" routerLink="/me/locations">
+    <mat-icon>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+        <path
+          d="M36 16c0-6.63-5.37-12-12-12S12 9.37 12 16c0 9 12 22 12 22s12-13 12-22zm-16 0c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4-4-1.79-4-4zM10 40v4h28v-4H10z" />
+        </svg>
+    </mat-icon>
+    <span>آدرس ها</span>
+  </mat-list-item>
+  <mat-list-item matRipple [ngClass]="{'active': path == '/me/change-password'}" routerLink="/me/change-password">
+    <mat-icon>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+        <path
+          d="M36 16h-2v-4c0-5.52-4.48-10-10-10S14 6.48 14 12v4h-2c-2.21 0-4 1.79-4 4v20c0 2.21 1.79 4 4 4h24c2.21 0 4-1.79 4-4V20c0-2.21-1.79-4-4-4zM24 34c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm6.2-18H17.8v-4c0-3.42 2.78-6.2 6.2-6.2 3.42 0 6.2 2.78 6.2 6.2v4z" />
+      </svg>
+    </mat-icon>
+    <span>تغییر رمز عبور</span>
+  </mat-list-item>
+  <mat-list-item (click)="account.forget(true)">
+    <mat-icon>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+        <path
+          d="M20.17 31.17L23 34l10-10-10-10-2.83 2.83L25.34 22H6v4h19.34l-5.17 5.17zM38 6H10c-2.21 0-4 1.79-4 4v8h4v-8h28v28H10v-8H6v8c0 2.21 1.79 4 4 4h28c2.21 0 4-1.79 4-4V10c0-2.21-1.79-4-4-4z" />
+      </svg>
+    </mat-icon>
+    <span>خروج از حساب کاربری</span>
+  </mat-list-item>
+</mat-list>

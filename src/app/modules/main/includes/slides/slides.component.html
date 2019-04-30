@@ -1,0 +1,13 @@
+<div class="slides">
+  <div class="slide" *ngFor="let item of slides"
+    [ngStyle]="{'transform': 'translateX('+ transform + 'px' +')', 'transition': '.8s'}">
+    <img [src]="item.src" [alt]="item.title">
+    <button mat-raised-button [routerLink]="item.link">
+      <span>خریـد</span>
+      <mat-icon>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+          <path d="M30.83 14.83L28 12 16 24l12 12 2.83-2.83L21.66 24z" /></svg>
+      </mat-icon>
+    </button>
+  </div>
+</div>

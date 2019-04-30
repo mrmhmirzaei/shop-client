@@ -1,0 +1,31 @@
+mat-list{
+    background-color: #fff;
+    min-width: 280px;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: .3rem;
+}
+
+mat-list-item{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+mat-list-item:hover,
+mat-list-item.active{
+    background-color: rgba(0, 0, 0, 0.05);
+    transition: all .3s;
+}
+
+mat-list-item mat-icon{
+    transform: scale(.9);
+    margin-left: 10px;
+}
+
+mat-list-item span{
+    font-size: .8rem;
+}

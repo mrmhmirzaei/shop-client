@@ -1,0 +1,46 @@
+<mat-progress-bar class="loading" *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+<div class="container">
+  <me-list></me-list>
+  <div class="content">
+    <div class="header">
+      <h3>ویرایش پروفایل</h3>
+      <p>ویرایش اطلاعات کاربری</p>
+    </div>
+    <div class="card error">
+      <p>با تایید کردن شماره موبایل {{account.phone}} می توانید از امکانات بیشتری بهره ببرید.</p>
+      <button mat-raised-button>تایید کردن</button>
+    </div>
+    <div class="card">
+      <div class="form">
+        <div class="title">حساب شخصی</div>
+        <div class="form">
+          <mat-form-field appearance="outline">
+            <mat-label>نام</mat-label>
+            <input matInput [(ngModel)]="account.name.first" [disabled]="loading">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline">
+            <mat-label>نام خانوادگی</mat-label>
+            <input matInput [(ngModel)]="account.name.last" [disabled]="loading">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline">
+            <mat-label>شماره موبایل </mat-label>
+            <input matInput type="tel" name="telephone number" class="ltr" placeholder="09" [(ngModel)]="account.phone"
+              [disabled]="loading">
+            <mat-hint *ngIf="profile.phone.verified == false">شماره تلفن تایید نشده است.</mat-hint>
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline">
+            <mat-label>آدرس ایمیل</mat-label>
+            <input matInput type="email" name="email address" class="ltr" placeholder="example@mail.com"
+              [(ngModel)]="account.email" disabled="true">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="buttons">
+        <button mat-raised-button color="primary" (click)="update()" [disabled]="loading">ویرایش اطلاعات</button>
+      </div>
+    </div>
+  </div>
+</div>

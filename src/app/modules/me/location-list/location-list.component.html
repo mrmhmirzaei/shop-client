@@ -1,0 +1,50 @@
+<mat-progress-bar class="loading" *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+<div class="container">
+  <me-list></me-list>
+  <div class="card" *ngIf="locations == null"></div>
+  <div class="card" *ngIf="locations != null && locations.length == 0">
+    <h3>بدون آدرس</h3>
+    <p>شما هیچ آدرسی را به ثبت نرسانده اید.</p>
+    <button mat-raised-button color="primary" (click)="openForm()">ثبت آدرس جدید</button>
+  </div>
+  <div class="card" *ngIf="locations != null && locations.length != 0">
+    <div class="header">
+      <h3>آدرس ها</h3>
+      <button mat-raised-button color="primary" (click)="openForm()">ثبت آدرس جدید</button>
+    </div>
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let item of locations; let i = index">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{item.name}}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{(item.address.length>20)?item.address.slice(0, 20)+" ...":item.address}} 
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>
+          نام آدرس: {{item.name}}
+        </p>
+        <p>
+          آدرس: {{item.address}}
+        </p>
+        <p>
+          کد پستی:‌ {{item.code}}
+        </p>
+        <p>
+          شماره تلفن: {{item.phone}}
+        </p>
+        <div class="buttons">
+          <button mat-raised-button color="primary" (click)="openForm(item)">ویرایش</button>
+          <button mat-icon-button (click)="remove(item._id, i)">
+            <mat-icon>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                <path d="M12 38c0 2.21 1.79 4 4 4h16c2.21 0 4-1.79 4-4V14H12v24zM38 8h-7l-2-2H19l-2 2h-7v4h28V8z" />
+              </svg>
+            </mat-icon>
+          </button>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

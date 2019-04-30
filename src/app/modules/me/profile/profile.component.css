@@ -1,0 +1,78 @@
+div.container{
+    margin: 0 5vw;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+me-list{
+    height: 100%;
+}
+
+div.content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 30px;
+}
+
+div.card{
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    margin: 10px 20px;
+    margin-right: 0;
+    border-radius: .3rem;
+}
+
+div.card.error{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffee58;
+    padding: 5px 20px;
+    box-shadow: 0 3px 6px #ffee5842;
+    border-radius: .4rem;
+}
+
+div.card.error p{
+    width: 100%;
+}
+
+div.header p{
+    margin-top: -5px;
+    font-size: .9rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+div.card div.form{
+    display: flex;
+    flex-direction: column;
+}
+
+div.card div.form div.title{
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1.3rem;
+    margin: 10px 20px 20px 0;
+}
+
+div.card div.form div.form{
+    margin: 10px 40px;
+}
+
+mat-form-field {
+    min-width: 300px;
+    max-width: 300px;
+}
+
+mat-form-field input.ltr {
+    direction: ltr;
+    text-align: left;
+}
+
+div.buttons{
+    direction: ltr;
+}

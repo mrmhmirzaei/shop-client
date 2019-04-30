@@ -23,7 +23,7 @@ export class Http {
             headers['authorization'] = `Bearer ${token['access_token']}`;
         }
 
-        if(method == 'POST' && Object.keys(body).length != 0){
+        if(method == 'POST' || method == "PUT" || method == "DELETE" && Object.keys(body).length != 0){
             headers['Content-Type'] = 'application/json';
             options['body'] = JSON.stringify(body);
         }

@@ -7,8 +7,8 @@ import {
     MatIconModule,
     MatBadgeModule,
     MatTooltipModule,
-    MatBottomSheetModule,
-    MatDividerModule
+    MatDividerModule,
+    MatBottomSheetModule
 } from '@angular/material';
 
 
@@ -20,7 +20,7 @@ const module = [
     MatBadgeModule,
     MatTooltipModule,
     MatBottomSheetModule,
-    MatDividerModule
+    MatDividerModule,
 ];
 
 @NgModule({

@@ -1,0 +1,43 @@
+div.slides {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    height: 25vw;
+    overflow: hidden;
+}
+
+div.slide {
+    position: relative;
+    height: auto;
+    margin: 0 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 2px 0 4px rgba(0, 0, 0, .1), -2px 0 4px rgba(0, 0, 0, .1);
+    transition: all .3s;
+}
+
+div.slide:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .15), 10px 0 15px rgba(0, 0, 0, .15), -10px 0 15px rgba(0, 0, 0, .15);
+    transition: all .3s;
+}
+
+div.slide img, div.slide {
+    border-radius: .3rem;
+}
+
+div.slide img {
+    position: relative;
+    width: 60vw;
+    height: auto;
+    display: block;
+}
+
+div.slide button {
+    position: absolute;
+    bottom: 40px;
+    left: 60px;
+}
+
+div.slide button mat-icon {
+    margin-right: 10px;
+    margin-left: -5px;
+}

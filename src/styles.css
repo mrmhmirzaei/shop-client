@@ -24,3 +24,15 @@ svg.primary{
 .mat-menu-panel{
     max-width: 100% !important;
 }
+
+input.ltr{
+    direction: ltr;
+    text-align: left;
+}
+
+mat-progress-bar.loading{
+    position: absolute;
+    top: 103px;
+    left: 0;
+    right: 0;
+}
